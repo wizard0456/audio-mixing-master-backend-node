@@ -1,0 +1,163 @@
+[25-Jul-2024 13:15:24 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:15:24 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:15:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:15:24 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:15:24 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:15:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:15:34 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:15:34 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:15:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:17 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:17 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:17 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:17 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:17 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:17 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:38 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:38 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:38 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:47 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:47 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:47 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:47 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:47 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[25-Jul-2024 13:16:47 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:08 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:08 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:08 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:09 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:09 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:09 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:35 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:35 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:35 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:35 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:49 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:49 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:49 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:49 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:44:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:10 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:10 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:10 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:10 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:10 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:10 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:28 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:28 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:28 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:28 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:34 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:34 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:34 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:34 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:45:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:47:20 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:47:20 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:47:20 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:47:21 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:47:21 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[26-Jul-2024 14:47:21 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[29-Jul-2024 06:21:24 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[29-Jul-2024 06:21:24 UTC] PHP Warning:  require(/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[29-Jul-2024 06:21:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/zetdsqxs/music.zetdigi.com/backend/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/zetdsqxs/music.zetdigi.com/backend/public/index.php on line 13
+[07-Aug-2024 14:05:21 UTC] PHP Fatal error:  Cannot use [] for reading in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/PayPalController.php on line 471
+[07-Aug-2024 14:05:21 UTC] PHP Fatal error:  Cannot use [] for reading in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/PayPalController.php on line 471
+[07-Aug-2024 14:05:28 UTC] PHP Fatal error:  Cannot use [] for reading in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/PayPalController.php on line 471
+[07-Aug-2024 14:05:29 UTC] PHP Fatal error:  Cannot use [] for reading in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/PayPalController.php on line 471
+[07-Aug-2024 14:06:06 UTC] PHP Fatal error:  Cannot use [] for reading in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/PayPalController.php on line 471
+[07-Aug-2024 14:06:07 UTC] PHP Fatal error:  Cannot use [] for reading in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/PayPalController.php on line 471
+[08-Aug-2024 05:58:50 UTC] PHP Fatal error:  Cannot use App\Models\order_item as order_item because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/OrderController.php on line 20
+[08-Aug-2024 05:59:02 UTC] PHP Fatal error:  Cannot use App\Models\order_item as order_item because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/OrderController.php on line 20
+[08-Aug-2024 05:59:59 UTC] PHP Fatal error:  Cannot use App\Models\order_item as order_item because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/OrderController.php on line 20
+[08-Aug-2024 06:00:20 UTC] PHP Fatal error:  Cannot use App\Models\order_item as order_item because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/OrderController.php on line 20
+[08-Aug-2024 06:01:10 UTC] PHP Fatal error:  Cannot use App\Models\order_item as order_item because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/OrderController.php on line 20
+[08-Aug-2024 06:01:36 UTC] PHP Fatal error:  Cannot use App\Models\order_item as order_item because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/OrderController.php on line 20
+[08-Aug-2024 06:03:16 UTC] PHP Fatal error:  Cannot use App\Models\order_item as order_item because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/OrderController.php on line 20
+[08-Aug-2024 12:54:47 UTC] Product IDs from request: [49]
+[08-Aug-2024 12:54:47 UTC] Product IDs from coupon: "[49]"
+[13-Aug-2024 08:28:48 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Auth as Auth because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/PayPalController.php on line 28
+[13-Aug-2024 08:28:55 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Auth as Auth because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/PayPalController.php on line 28
+[13-Aug-2024 08:29:58 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Auth as Auth because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/PayPalController.php on line 28
+[13-Aug-2024 08:30:14 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Auth as Auth because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/PayPalController.php on line 28
+[13-Aug-2024 08:30:58 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Auth as Auth because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/PayPalController.php on line 28
+[13-Aug-2024 08:31:19 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Auth as Auth because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/PayPalController.php on line 28
+[13-Aug-2024 08:31:26 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Auth as Auth because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/PayPalController.php on line 28
+[13-Aug-2024 09:11:54 UTC] PHP Fatal error:  Cannot use App\Models\OrderFile as OrderFile because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/OrderController.php on line 21
+[13-Aug-2024 09:11:54 UTC] PHP Fatal error:  Cannot use App\Models\OrderFile as OrderFile because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/OrderController.php on line 21
+[13-Aug-2024 09:13:44 UTC] PHP Fatal error:  Cannot use App\Models\OrderFile as OrderFile because the name is already in use in /home/zetdsqxs/music.zetdigi.com/backend/app/Http/Controllers/Web/OrderController.php on line 21
