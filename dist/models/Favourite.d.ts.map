@@ -1,0 +1,1 @@
+{"version":3,"file":"Favourite.d.ts","sourceRoot":"","sources":["../../src/models/Favourite.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,KAAK,EAAa,MAAM,WAAW,CAAC;AAK7C,cAAM,SAAU,SAAQ,KAAK;IACpB,EAAE,EAAG,MAAM,CAAC;IACZ,OAAO,EAAG,MAAM,CAAC;IACjB,UAAU,EAAG,MAAM,CAAC;IAC3B,SAAgB,SAAS,EAAG,IAAI,CAAC;IACjC,SAAgB,SAAS,EAAG,IAAI,CAAC;CAClC;AAyCD,eAAe,SAAS,CAAC"}
