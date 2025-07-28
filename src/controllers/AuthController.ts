@@ -131,7 +131,7 @@ export class AuthController {
   static async login(req: Request, res: Response) {
     try {
       const { email, password } = req.body;
-
+      
       // Validate required fields
       if (!email || !password) {
         return res.status(400).json({ message: 'Email and password are required' });
