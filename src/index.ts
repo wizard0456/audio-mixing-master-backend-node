@@ -63,7 +63,7 @@ app.use(cors({
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
-      console.log('CORS blocked origin:', origin);
+      console.log('CORS blocked origin___:', origin);
       callback(new Error('Not allowed by CORS'));
     }
   },
