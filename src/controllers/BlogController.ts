@@ -103,15 +103,17 @@ export class BlogController {
   static async show(req: Request, res: Response) {
     try {
       const { id } = req.params;
-      const isSlug = isNaN(parseInt(id || '0'));
+      console.log(id);
+      // const isSlug = isNaN(parseInt(id || '0'));
 
       let whereCondition: any;
-      if (isSlug) {
-        whereCondition = { slug: id };
-      } else {
-        whereCondition = { id: parseInt(id || '0') };
-      }
-
+      // if (isSlug) {
+      //   whereCondition = { slug: id };
+      // } else {
+      //   whereCondition = { id: parseInt(id || '0') };
+      // }
+      whereCondition = { slug: id};
+      console.log(whereCondition);
       const blog = await Blog.findOne({
         where: whereCondition,
         include: [

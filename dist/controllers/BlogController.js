@@ -94,14 +94,10 @@ class BlogController {
     static async show(req, res) {
         try {
             const { id } = req.params;
-            const isSlug = isNaN(parseInt(id || '0'));
+            console.log(id);
             let whereCondition;
-            if (isSlug) {
-                whereCondition = { slug: id };
-            }
-            else {
-                whereCondition = { id: parseInt(id || '0') };
-            }
+            whereCondition = { slug: id };
+            console.log(whereCondition);
             const blog = await models_1.Blog.findOne({
                 where: whereCondition,
                 include: [

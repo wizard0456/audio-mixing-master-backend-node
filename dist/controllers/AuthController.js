@@ -108,6 +108,7 @@ class AuthController {
     static async login(req, res) {
         try {
             const { email, password } = req.body;
+            console.log(email, password);
             if (!email || !password) {
                 return res.status(400).json({ message: 'Email and password are required' });
             }
@@ -124,6 +125,7 @@ class AuthController {
             }
             const secret = 'fallback-secret';
             const token = jsonwebtoken_1.default.sign({ id: user.id }, secret, { expiresIn: '7d' });
+            console.log(token);
             return res.status(200).json({
                 success: true,
                 message: 'Login successful',
@@ -278,6 +280,7 @@ class AuthController {
     }
     static async getCurrentUser(req, res) {
         try {
+            console.log('I am in me api.');
             if (!req.user || !req.user.id) {
                 return res.status(401).json({ message: 'User not authenticated' });
             }

@@ -8,8 +8,9 @@ export interface AuthRequest extends Request {
 
 export const auth = async (req: AuthRequest, res: Response, next: NextFunction) => {
   try {
+    console.log('I am in auth middleware.');
     const token = req.header('Authorization')?.replace('Bearer ', '');
-
+    console.log(token);
     if (!token) {
       return res.status(401).json({ message: 'No token, authorization denied' });
     }

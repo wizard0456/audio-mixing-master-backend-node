@@ -8,7 +8,9 @@ const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const User_1 = __importDefault(require("../models/User"));
 const auth = async (req, res, next) => {
     try {
+        console.log('I am in auth middleware.');
         const token = req.header('Authorization')?.replace('Bearer ', '');
+        console.log(token);
         if (!token) {
             return res.status(401).json({ message: 'No token, authorization denied' });
         }

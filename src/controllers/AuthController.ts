@@ -131,7 +131,7 @@ export class AuthController {
   static async login(req: Request, res: Response) {
     try {
       const { email, password } = req.body;
-      
+      console.log(email, password);
       // Validate required fields
       if (!email || !password) {
         return res.status(400).json({ message: 'Email and password are required' });
@@ -161,7 +161,7 @@ export class AuthController {
         secret,
         { expiresIn: '7d' }
       );
-
+      console.log(token);
       return res.status(200).json({
         success: true,
         message: 'Login successful',
@@ -355,6 +355,7 @@ export class AuthController {
   // Get current user
   static async getCurrentUser(req: any, res: Response) {
     try {
+      console.log('I am in me api.');
       if (!req.user || !req.user.id) {
         return res.status(401).json({ message: 'User not authenticated' });
       }
