@@ -1,6 +1,9 @@
 import { Request, Response } from 'express';
 import { Blog, BlogCategory } from '../models';
 import { Op } from 'sequelize';
+import path from 'path';
+import fs from 'fs';
+import { convertToWebUrl } from '../utils/imageUtils';
 
 export class AdminBlogController {
   // Get all blogs (admin view)
@@ -49,12 +52,21 @@ export class AdminBlogController {
         offset: offset,
       });
 
+      // Convert stored image paths to web URLs for admin interface
+      const processedBlogs = blogs.map(blog => {
+        const blogData = blog.toJSON();
+        if (blogData.featured_image) {
+          blogData.featured_image = convertToWebUrl(blogData.featured_image, req);
+        }
+        return blogData;
+      });
+
       const totalPages = Math.ceil(count / perPage);
 
       return res.json({
         success: true,
         data: {
-          blogs,
+          blogs: processedBlogs,
           pagination: {
             current_page: page,
             per_page: perPage,
@@ -80,7 +92,7 @@ export class AdminBlogController {
         include: [
           {
             model: BlogCategory,
-            as: 'category',
+            as: 'category', 
             attributes: ['id', 'name', 'slug']
           }
         ],
@@ -90,7 +102,13 @@ export class AdminBlogController {
         return res.status(404).json({ message: 'Blog not found' });
       }
 
-      return res.json({ success: true, data: { blog } });
+      // Convert stored image path to web URL for admin interface
+      const blogData = blog.toJSON();
+      if (blogData.featured_image) {
+        blogData.featured_image = convertToWebUrl(blogData.featured_image, req);
+      }
+
+      return res.json({ success: true, data: { blog: blogData } });
     } catch (error) {
       console.error('Admin blog show error:', error);
       return res.status(500).json({ message: 'Server error' });
@@ -109,7 +127,8 @@ export class AdminBlogController {
         keywords,
         html_content,
         category_id,
-        is_active
+        is_active,
+        image_url
       } = req.body;
 
       // Generate slug from title
@@ -124,6 +143,16 @@ export class AdminBlogController {
         return res.status(400).json({ message: 'A blog with this title already exists' });
       }
 
+      // Handle image - either file upload or URL
+      let featuredImage = null;
+      if (req.file) {
+        // File was uploaded - store with public prefix
+        featuredImage = `public/blog-images/${req.file.filename}`;
+      } else if (image_url) {
+        // Image URL was provided
+        featuredImage = image_url;
+      }
+
       const blog = await Blog.create({
         title: title || '',
         slug,
@@ -134,6 +163,7 @@ export class AdminBlogController {
         html_content: html_content || content || '',
         keywords: keywords || '',
         meta_description: '', // Not provided in frontend
+        featured_image: featuredImage,
         category_id: parseInt(category_id || '1'),
         is_published: (is_active === '1' || is_active === 1 || is_active === true) ? 1 : 0,
       });
@@ -159,7 +189,8 @@ export class AdminBlogController {
         meta_description,
         html_content,
         category_id,
-        is_published
+        is_published,
+        image_url
       } = req.body;
 
       const blog = await Blog.findByPk(id);
@@ -182,7 +213,33 @@ export class AdminBlogController {
         }
       }
 
-      await blog.update({
+      // Handle image - either file upload or URL
+      let featuredImage = blog.featured_image;
+      if (req.file) {
+        // File was uploaded - store with public prefix
+        featuredImage = `public/blog-images/${req.file.filename}`;
+        
+        // Delete old image file if it exists and is not a URL
+        if (blog.featured_image && !blog.featured_image.startsWith('http')) {
+          const oldImagePath = path.join('public', blog.featured_image);
+          if (fs.existsSync(oldImagePath)) {
+            fs.unlinkSync(oldImagePath);
+          }
+        }
+      } else if (image_url !== undefined) {
+        // Image URL was provided or cleared
+        featuredImage = image_url;
+        
+        // Delete old image file if it exists and is not a URL
+        if (blog.featured_image && !blog.featured_image.startsWith('http')) {
+          const oldImagePath = path.join('public', blog.featured_image);
+          if (fs.existsSync(oldImagePath)) {
+            fs.unlinkSync(oldImagePath);
+          }
+        }
+      }
+
+      const updateData: any = {
         title: title || blog.title,
         slug,
         author_name: author_name || blog.author_name,
@@ -194,7 +251,14 @@ export class AdminBlogController {
         meta_description: meta_description !== undefined ? meta_description : blog.meta_description,
         category_id: category_id ? parseInt(category_id) : blog.category_id,
         is_published: is_published !== undefined ? parseInt(is_published) : blog.is_published
-      });
+      };
+
+      // Only update featured_image if it has a value
+      if (featuredImage !== undefined) {
+        updateData.featured_image = featuredImage;
+      }
+
+      await blog.update(updateData);
 
       return res.json({ success: true, data: { blog } });
     } catch (error) {

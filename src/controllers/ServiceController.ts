@@ -6,6 +6,7 @@ export class ServiceController {
   // Get all services
   static async index(req: Request, res: Response) {
     try {
+
       const page = parseInt(req.query['page'] as string) || 1;
       const perPage = parseInt(req.query['per_page'] as string) || 10;
       const offset = (page - 1) * perPage;

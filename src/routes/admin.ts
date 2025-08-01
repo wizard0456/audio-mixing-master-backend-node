@@ -1,5 +1,7 @@
 import { Router } from 'express';
 import multer from 'multer';
+import path from 'path';
+import fs from 'fs';
 import { adminAuth } from '../middleware/auth';
 import { AdminSampleAudioController } from '../controllers/AdminSampleAudioController';
 import { AdminGalleryController } from '../controllers/AdminGalleryController';
@@ -22,6 +24,36 @@ const upload = multer({
   limits: {
     fileSize: 5 * 1024 * 1024, // 5MB limit
   },
+});
+
+// Configure multer for blog image uploads
+const blogImageStorage = multer.diskStorage({
+  destination: (_req, _file, cb) => {
+    const uploadDir = 'public/blog-images';
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    cb(null, uploadDir);
+  },
+  filename: (_req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, 'blog_image_' + uniqueSuffix + path.extname(file.originalname));
+  }
+});
+
+const blogImageUpload = multer({
+  storage: blogImageStorage,
+  fileFilter: (_req, file, cb) => {
+    const allowedMimeTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+    if (allowedMimeTypes.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only image files are allowed'));
+    }
+  },
+  limits: {
+    fileSize: 5 * 1024 * 1024 // 5MB limit
+  }
 });
 
 // Apply admin authentication to all routes
@@ -116,8 +148,8 @@ router.post('/order/upload-file/:id', AdminOrderController.orderUpdateFile);
 // Blogs
 router.get('/blogs', AdminBlogController.index);
 router.get('/blogs/:id', AdminBlogController.show);
-router.post('/blogs', upload.none(), AdminBlogController.create);
-router.put('/blogs/:id', upload.none(), AdminBlogController.update);
+router.post('/blogs', blogImageUpload.single('image'), AdminBlogController.create);
+router.put('/blogs/:id', blogImageUpload.single('image'), AdminBlogController.update);
 router.put('/blogs/:id/status', AdminBlogController.updateStatus);
 router.delete('/blogs/:id', AdminBlogController.destroy);
 

@@ -4,6 +4,7 @@ import { Op } from 'sequelize';
 import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
+import { assignFallbackImageIfNeeded, convertToWebUrl } from '../utils/imageUtils';
 
 // Configure multer for HTML file uploads
 const storage = multer.diskStorage({
@@ -77,12 +78,24 @@ export class BlogController {
         offset: offset,
       });
 
+      // Process blogs to assign fallback images if needed and convert to web URLs
+      const processedBlogs = await Promise.all(
+        blogs.map(async (blog) => {
+          const processedBlog = await assignFallbackImageIfNeeded(blog);
+          // Convert stored image path to web URL for frontend
+          if (processedBlog.featured_image) {
+            processedBlog.featured_image = convertToWebUrl(processedBlog.featured_image, req);
+          }
+          return processedBlog;
+        })
+      );
+
       const totalPages = Math.ceil(count / perPage);
 
       return res.json({
         success: true,
         data: {
-          blogs,
+          blogs: processedBlogs,
           pagination: {
             current_page: page,
             per_page: perPage,
@@ -129,11 +142,19 @@ export class BlogController {
         return res.status(404).json({ message: 'Blog not found' });
       }
 
+      // Assign fallback image if needed (for larger size since this is individual blog view)
+      const processedBlog = await assignFallbackImageIfNeeded(blog, true);
+
+      // Convert stored image path to web URL for frontend
+      if (processedBlog.featured_image) {
+        processedBlog.featured_image = convertToWebUrl(processedBlog.featured_image, req);
+      }
+
       // Increment views
       blog.views += 1;
       await blog.save();
 
-      return res.json({ success: true, data: { blog } });
+      return res.json({ success: true, data: { blog: processedBlog } });
     } catch (error) {
       console.error('Blog show error:', error);
       return res.status(500).json({ message: 'Server error' });

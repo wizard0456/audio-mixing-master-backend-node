@@ -9,6 +9,7 @@ const sequelize_1 = require("sequelize");
 const multer_1 = __importDefault(require("multer"));
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
+const imageUtils_1 = require("../utils/imageUtils");
 const storage = multer_1.default.diskStorage({
     destination: (_req, _file, cb) => {
         const uploadDir = 'uploads/blog-html';
@@ -70,11 +71,18 @@ class BlogController {
                 limit: perPage,
                 offset: offset,
             });
+            const processedBlogs = await Promise.all(blogs.map(async (blog) => {
+                const processedBlog = await (0, imageUtils_1.assignFallbackImageIfNeeded)(blog);
+                if (processedBlog.featured_image) {
+                    processedBlog.featured_image = (0, imageUtils_1.convertToWebUrl)(processedBlog.featured_image, req);
+                }
+                return processedBlog;
+            }));
             const totalPages = Math.ceil(count / perPage);
             return res.json({
                 success: true,
                 data: {
-                    blogs,
+                    blogs: processedBlogs,
                     pagination: {
                         current_page: page,
                         per_page: perPage,
@@ -111,9 +119,13 @@ class BlogController {
             if (!blog) {
                 return res.status(404).json({ message: 'Blog not found' });
             }
+            const processedBlog = await (0, imageUtils_1.assignFallbackImageIfNeeded)(blog, true);
+            if (processedBlog.featured_image) {
+                processedBlog.featured_image = (0, imageUtils_1.convertToWebUrl)(processedBlog.featured_image, req);
+            }
             blog.views += 1;
             await blog.save();
-            return res.json({ success: true, data: { blog } });
+            return res.json({ success: true, data: { blog: processedBlog } });
         }
         catch (error) {
             console.error('Blog show error:', error);

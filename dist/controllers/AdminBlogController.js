@@ -1,8 +1,14 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AdminBlogController = void 0;
 const models_1 = require("../models");
 const sequelize_1 = require("sequelize");
+const path_1 = __importDefault(require("path"));
+const fs_1 = __importDefault(require("fs"));
+const imageUtils_1 = require("../utils/imageUtils");
 class AdminBlogController {
     static async index(req, res) {
         try {
@@ -39,11 +45,18 @@ class AdminBlogController {
                 limit: perPage,
                 offset: offset,
             });
+            const processedBlogs = blogs.map(blog => {
+                const blogData = blog.toJSON();
+                if (blogData.featured_image) {
+                    blogData.featured_image = (0, imageUtils_1.convertToWebUrl)(blogData.featured_image, req);
+                }
+                return blogData;
+            });
             const totalPages = Math.ceil(count / perPage);
             return res.json({
                 success: true,
                 data: {
-                    blogs,
+                    blogs: processedBlogs,
                     pagination: {
                         current_page: page,
                         per_page: perPage,
@@ -76,7 +89,11 @@ class AdminBlogController {
             if (!blog) {
                 return res.status(404).json({ message: 'Blog not found' });
             }
-            return res.json({ success: true, data: { blog } });
+            const blogData = blog.toJSON();
+            if (blogData.featured_image) {
+                blogData.featured_image = (0, imageUtils_1.convertToWebUrl)(blogData.featured_image, req);
+            }
+            return res.json({ success: true, data: { blog: blogData } });
         }
         catch (error) {
             console.error('Admin blog show error:', error);
@@ -85,7 +102,7 @@ class AdminBlogController {
     }
     static async create(req, res) {
         try {
-            const { title, author_name, publish_date, read_time, content, keywords, html_content, category_id, is_active } = req.body;
+            const { title, author_name, publish_date, read_time, content, keywords, html_content, category_id, is_active, image_url } = req.body;
             const slug = (title || '')
                 .toLowerCase()
                 .replace(/[^a-z0-9]+/g, '-')
@@ -93,6 +110,13 @@ class AdminBlogController {
             const existingBlog = await models_1.Blog.findOne({ where: { slug } });
             if (existingBlog) {
                 return res.status(400).json({ message: 'A blog with this title already exists' });
+            }
+            let featuredImage = null;
+            if (req.file) {
+                featuredImage = `public/blog-images/${req.file.filename}`;
+            }
+            else if (image_url) {
+                featuredImage = image_url;
             }
             const blog = await models_1.Blog.create({
                 title: title || '',
@@ -104,6 +128,7 @@ class AdminBlogController {
                 html_content: html_content || content || '',
                 keywords: keywords || '',
                 meta_description: '',
+                featured_image: featuredImage,
                 category_id: parseInt(category_id || '1'),
                 is_published: (is_active === '1' || is_active === 1 || is_active === true) ? 1 : 0,
             });
@@ -117,7 +142,7 @@ class AdminBlogController {
     static async update(req, res) {
         try {
             const { id } = req.params;
-            const { title, author_name, publish_date, read_time, content, keywords, meta_description, html_content, category_id, is_published } = req.body;
+            const { title, author_name, publish_date, read_time, content, keywords, meta_description, html_content, category_id, is_published, image_url } = req.body;
             const blog = await models_1.Blog.findByPk(id);
             if (!blog) {
                 return res.status(404).json({ message: 'Blog not found' });
@@ -133,7 +158,26 @@ class AdminBlogController {
                     return res.status(400).json({ message: 'A blog with this title already exists' });
                 }
             }
-            await blog.update({
+            let featuredImage = blog.featured_image;
+            if (req.file) {
+                featuredImage = `public/blog-images/${req.file.filename}`;
+                if (blog.featured_image && !blog.featured_image.startsWith('http')) {
+                    const oldImagePath = path_1.default.join('public', blog.featured_image);
+                    if (fs_1.default.existsSync(oldImagePath)) {
+                        fs_1.default.unlinkSync(oldImagePath);
+                    }
+                }
+            }
+            else if (image_url !== undefined) {
+                featuredImage = image_url;
+                if (blog.featured_image && !blog.featured_image.startsWith('http')) {
+                    const oldImagePath = path_1.default.join('public', blog.featured_image);
+                    if (fs_1.default.existsSync(oldImagePath)) {
+                        fs_1.default.unlinkSync(oldImagePath);
+                    }
+                }
+            }
+            const updateData = {
                 title: title || blog.title,
                 slug,
                 author_name: author_name || blog.author_name,
@@ -145,7 +189,11 @@ class AdminBlogController {
                 meta_description: meta_description !== undefined ? meta_description : blog.meta_description,
                 category_id: category_id ? parseInt(category_id) : blog.category_id,
                 is_published: is_published !== undefined ? parseInt(is_published) : blog.is_published
-            });
+            };
+            if (featuredImage !== undefined) {
+                updateData.featured_image = featuredImage;
+            }
+            await blog.update(updateData);
             return res.json({ success: true, data: { blog } });
         }
         catch (error) {

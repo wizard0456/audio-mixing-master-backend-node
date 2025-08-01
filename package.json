@@ -18,7 +18,8 @@
     "format:check": "prettier --check src/**/*.ts",
     "type-check": "tsc --noEmit",
     "prepare": "husky install",
-    "setup-blog": "node src/scripts/setup-blog-system.js"
+    "setup-blog": "node src/scripts/setup-blog-system.js",
+    "seed-blog": "node seed-blog-data.js"
   },
   "keywords": [
     "audio",

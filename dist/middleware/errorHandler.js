@@ -1,42 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.errorHandler = void 0;
-const errorHandler = (err, req, res, _next) => {
-    let error = { ...err };
-    error.message = err.message;
-    console.error('Error:', {
-        message: err.message,
-        stack: err.stack,
-        url: req.url,
-        method: req.method,
-        ip: req.ip,
-        userAgent: req.get('User-Agent'),
-    });
-    if (err.name === 'CastError') {
-        const message = 'Resource not found';
-        error = { message, statusCode: 404 };
+const multer_1 = require("multer");
+const errorHandler = (err, _req, res, _next) => {
+    console.error('Error:', err);
+    if (err instanceof multer_1.MulterError) {
+        if (err.code === 'LIMIT_FILE_SIZE') {
+            return res.status(400).json({ message: 'File size too large. Maximum size is 5MB.' });
+        }
+        if (err.code === 'LIMIT_UNEXPECTED_FILE') {
+            return res.status(400).json({ message: 'Unexpected file field.' });
+        }
+        return res.status(400).json({ message: err.message });
     }
-    if (err.name === 'MongoError' && err.code === 11000) {
-        const message = 'Duplicate field value entered';
-        error = { message, statusCode: 400 };
+    if (err.message) {
+        return res.status(500).json({ message: err.message });
     }
-    if (err.name === 'ValidationError') {
-        const message = Object.values(err.errors).map((val) => val.message).join(', ');
-        error = { message, statusCode: 400 };
-    }
-    if (err.name === 'JsonWebTokenError') {
-        const message = 'Invalid token';
-        error = { message, statusCode: 401 };
-    }
-    if (err.name === 'TokenExpiredError') {
-        const message = 'Token expired';
-        error = { message, statusCode: 401 };
-    }
-    res.status(error.statusCode || 500).json({
-        success: false,
-        error: error.message || 'Server Error',
-        ...(process.env['NODE_ENV'] === 'development' && { stack: err.stack }),
-    });
+    return res.status(500).json({ message: 'Internal server error' });
 };
 exports.errorHandler = errorHandler;
 //# sourceMappingURL=errorHandler.js.map

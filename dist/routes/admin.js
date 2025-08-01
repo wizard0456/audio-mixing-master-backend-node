@@ -5,6 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const multer_1 = __importDefault(require("multer"));
+const path_1 = __importDefault(require("path"));
+const fs_1 = __importDefault(require("fs"));
 const auth_1 = require("../middleware/auth");
 const AdminSampleAudioController_1 = require("../controllers/AdminSampleAudioController");
 const AdminGalleryController_1 = require("../controllers/AdminGalleryController");
@@ -24,6 +26,34 @@ const upload = (0, multer_1.default)({
     limits: {
         fileSize: 5 * 1024 * 1024,
     },
+});
+const blogImageStorage = multer_1.default.diskStorage({
+    destination: (_req, _file, cb) => {
+        const uploadDir = 'public/blog-images';
+        if (!fs_1.default.existsSync(uploadDir)) {
+            fs_1.default.mkdirSync(uploadDir, { recursive: true });
+        }
+        cb(null, uploadDir);
+    },
+    filename: (_req, file, cb) => {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        cb(null, 'blog_image_' + uniqueSuffix + path_1.default.extname(file.originalname));
+    }
+});
+const blogImageUpload = (0, multer_1.default)({
+    storage: blogImageStorage,
+    fileFilter: (_req, file, cb) => {
+        const allowedMimeTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+        if (allowedMimeTypes.includes(file.mimetype)) {
+            cb(null, true);
+        }
+        else {
+            cb(new Error('Only image files are allowed'));
+        }
+    },
+    limits: {
+        fileSize: 5 * 1024 * 1024
+    }
 });
 router.use(auth_1.adminAuth);
 router.get('/sample-audios', AdminSampleAudioController_1.AdminSampleAudioController.index);
@@ -94,8 +124,8 @@ router.delete('/order/:id', AdminOrderController_1.AdminOrderController.destroy)
 router.post('/order/upload-file/:id', AdminOrderController_1.AdminOrderController.orderUpdateFile);
 router.get('/blogs', AdminBlogController_1.AdminBlogController.index);
 router.get('/blogs/:id', AdminBlogController_1.AdminBlogController.show);
-router.post('/blogs', upload.none(), AdminBlogController_1.AdminBlogController.create);
-router.put('/blogs/:id', upload.none(), AdminBlogController_1.AdminBlogController.update);
+router.post('/blogs', blogImageUpload.single('image'), AdminBlogController_1.AdminBlogController.create);
+router.put('/blogs/:id', blogImageUpload.single('image'), AdminBlogController_1.AdminBlogController.update);
 router.put('/blogs/:id/status', AdminBlogController_1.AdminBlogController.updateStatus);
 router.delete('/blogs/:id', AdminBlogController_1.AdminBlogController.destroy);
 router.get('/blog-categories', AdminBlogController_1.AdminBlogController.getCategories);
