@@ -101,8 +101,8 @@ export const assignFallbackImageIfNeeded = async (blog: any, isLarge: boolean = 
   if (!blog.featured_image || blog.featured_image.trim() === '') {
     const fallbackImage = getRandomImageForBlog(blog.id, isLarge);
     
-    // Store the full web URL in database (as requested for public access)
-    const publicImageUrl = `public/blog_images/${fallbackImage}`;
+    // Store the external URL as-is since it's already a full web URL
+    const publicImageUrl = fallbackImage;
     
     // Update the blog in the database with the fallback image
     try {
@@ -136,10 +136,21 @@ export const convertToWebUrl = (imagePath: string, req: any): string => {
     return imagePath;
   }
   
-  // If it starts with "public/", convert to web URL
+  // Handle malformed URLs that have public/ prefix followed by external URLs
+  if (imagePath.includes('public/') && imagePath.includes('http')) {
+    // Extract the external URL part
+    const httpIndex = imagePath.indexOf('http');
+    if (httpIndex !== -1) {
+      return imagePath.substring(httpIndex);
+    }
+  }
+  
+  // If it starts with "public/", remove the prefix and convert to web URL
   if (imagePath.startsWith('public/')) {
     const baseUrl = `${req.protocol}://${req.get('host')}`;
-    return `${baseUrl}/${imagePath}`;
+    // Remove 'public/' prefix since public directory is the web root
+    const webPath = imagePath.replace('public/', '');
+    return `${baseUrl}/${webPath}`;
   }
   
   // If it's a relative path, assume it's in public folder

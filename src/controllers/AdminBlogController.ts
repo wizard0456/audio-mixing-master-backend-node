@@ -217,11 +217,11 @@ export class AdminBlogController {
       let featuredImage = blog.featured_image;
       if (req.file) {
         // File was uploaded - store with public prefix
-        featuredImage = `public/blog-images/${req.file.filename}`;
+        featuredImage = `blog-images/${req.file.filename}`;
         
         // Delete old image file if it exists and is not a URL
         if (blog.featured_image && !blog.featured_image.startsWith('http')) {
-          const oldImagePath = path.join('public', blog.featured_image);
+          const oldImagePath = path.join('', blog.featured_image);
           if (fs.existsSync(oldImagePath)) {
             fs.unlinkSync(oldImagePath);
           }

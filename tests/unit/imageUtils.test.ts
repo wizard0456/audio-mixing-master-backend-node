@@ -46,7 +46,7 @@ describe('Image Utils', () => {
     it('should convert public path to web URL', () => {
       const imagePath = 'public/blog_images/image.jpg';
       const webUrl = convertToWebUrl(imagePath, mockReq);
-      expect(webUrl).toBe('http://localhost:3000/public/blog_images/image.jpg');
+      expect(webUrl).toBe('http://localhost:3000/blog_images/image.jpg');
     });
 
     it('should return full URL as is', () => {
@@ -59,6 +59,12 @@ describe('Image Utils', () => {
       const imagePath = 'blog-images/image.jpg';
       const webUrl = convertToWebUrl(imagePath, mockReq);
       expect(webUrl).toBe('http://localhost:3000/blog-images/image.jpg');
+    });
+
+    it('should handle malformed URLs with public/ prefix and external URLs', () => {
+      const imagePath = 'public/blog_images/https://images.pexels.com/photos/123.jpg';
+      const webUrl = convertToWebUrl(imagePath, mockReq);
+      expect(webUrl).toBe('https://images.pexels.com/photos/123.jpg');
     });
 
     it('should handle empty paths', () => {

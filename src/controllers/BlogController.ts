@@ -146,9 +146,9 @@ export class BlogController {
       const processedBlog = await assignFallbackImageIfNeeded(blog, true);
 
       // Convert stored image path to web URL for frontend
-      if (processedBlog.featured_image) {
-        processedBlog.featured_image = convertToWebUrl(processedBlog.featured_image, req);
-      }
+      // if (processedBlog.featured_image) {
+      //   processedBlog.featured_image = convertToWebUrl(processedBlog.featured_image, req);
+      // }
 
       // Increment views
       blog.views += 1;
