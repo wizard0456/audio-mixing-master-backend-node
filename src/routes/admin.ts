@@ -90,6 +90,8 @@ router.put('/users/:id/status', AdminUserController.updateStatus);
 router.post('/engineer/store', AdminUserController.storeEngineer);
 router.get('/engineer/list', AdminUserController.listEngineer);
 router.get('/engineer/:id', AdminUserController.showEngineer);
+router.put('/engineer/:id/status', AdminUserController.updateStatus);
+router.delete('/engineer/:id', AdminUserController.destroy);
 
 // Labels
 router.get('/labels', AdminLabelController.index);
